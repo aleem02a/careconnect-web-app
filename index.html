@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareConnect | Healthcare Support</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>CareConnect</h1>
+    <p class="subtitle">Mini Healthcare Support Platform for NGOs</p>
+
+    <!-- Patient Support Form -->
+    <h2>Patient Support Request</h2>
+    <form id="supportForm">
+      <label>Patient Name</label>
+      <input type="text" id="name" required />
+
+      <label>Age</label>
+      <input type="number" id="age" required />
+
+      <label>Describe Health Issue</label>
+      <textarea id="issue" rows="4" required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <div id="result" class="result-box hidden">
+      <h3>Automated Support Summary</h3>
+      <p><strong>Category:</strong> <span id="category"></span></p>
+      <p><strong>Urgency:</strong> <span id="urgency"></span></p>
+      <p id="response"></p>
+    </div>
+
+    <hr />
+
+    <!-- Volunteer Registration -->
+    <h2>Volunteer Registration</h2>
+    <form id="volunteerForm">
+      <label>Full Name</label>
+      <input type="text" id="vname" required />
+
+      <label>Email</label>
+      <input type="email" id="vemail" required />
+
+      <label>Skills / Interest</label>
+      <input type="text" id="vskills" required />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <hr />
+
+    <!-- Chatbot -->
+    <h2>Healthcare Chatbot (FAQ)</h2>
+    <div class="chatbox">
+      <div id="chat"></div>
+      <input type="text" id="userInput" placeholder="Ask a health question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- IMPORTANT FOR NETLIFY -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
